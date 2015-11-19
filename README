@@ -1,0 +1,35 @@
+-=-=-= What/Why? =-=-=-
+Created this for P vs NP
+
+Can sort millions of numbers in seconds
+
+Have a lot of names I thought of:
+p-sort, exlin, linex, ex-sort, mem-sort
+
+-=-=-= How? =-=-=-
+Uses memory trade off to skip checking values
+e.g.
+Places 1 at 1 and 2 at 2 - 1 < 2 will always be true
+
+1. Allocate memory for sort[] (input)
+2. Create input (RNG, list, count 0-size)
+3. Find high and low values in sort[]
+4. Size and allocate goal[] (range to sort output - also dupes[] for duplicate numbers)
+5. Place sort[cnt] to goal[ sort[cnt] - lo], increase dupes[]
+6. Loop through dupes[] and place goal[] to sort[]
+7. Print output and free() memory
+
+-=-=-= Limitations =-=-=-
+Memory
+
+Uses high and low values to make an array
+This is easy to segfault
+A large difference in numbers has a big impact
+
+e.g.
+A million 1's will use less memory than 1 and 1 billion
+e.g.
+Giving a list with 0 and 9trillion (high range 64bit number)
+will cause it to try to use more memory than possible
+
+Obviously, a small list of numbers far apart is a waste of memory
