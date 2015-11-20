@@ -90,7 +90,7 @@ int main(){
     //^ takes more time to malloc than 'sort', especially with 2x size
     //  not as much as printing though
 
-    printf("SORT_SZ = %lld\nGOAL_SZ = %lld\n\thi = %lld\n\tlo = %lld\n", SORT_SZ, GOAL_SZ, hi, lo);
+    printf("SORT_SZ = %lld\nGOAL_SZ = %llu\n\thi = %lld\n\tlo = %lld\n", SORT_SZ, GOAL_SZ, hi, lo);
     printf("%llu total bytes for goal\n", GOAL_SZ * sizeof(long long) );
 
     timer();
